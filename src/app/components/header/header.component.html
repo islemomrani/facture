@@ -1,0 +1,71 @@
+<div class="site-mobile-menu site-navbar-target">
+  <div class="site-mobile-menu-header">
+    <div class="site-mobile-menu-close mt-3">
+      <span class="icon-close2 js-menu-toggle"></span>
+    </div>
+  </div>
+  <div class="site-mobile-menu-body"></div>
+</div> <!-- .site-mobile-menu -->
+  
+  <header class="site-navbar mt-3">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="site-logo col-6"> <img src="assets/images/header.png" width="90px" alt="" style="margin-top: 15px;"><a href="">CrocoGest</a></div>
+  
+            <nav class="mx-auto site-navigation">
+              <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+                <li><a routerLink="" class="nav-link active " >Accueil</a></li>
+                <li><a routerLink="formations" class="active">Formations</a></li>
+                <li><a routerLink="devisClient" *ngIf="isLoggedIn() && user.role=='client'" class="active">Devis</a></li>
+                <li><a routerLink="factureClient" *ngIf="isLoggedIn() && user.role=='client'" class="active">Factures</a></li>
+                
+                
+                <li class="has-children" *ngIf="isLoggedIn() && user.role=='admin'">
+                  <a href="" class="active">Tableau De Bord</a>
+                  <ul class="dropdown">
+                    <li><a routerLink="admin">Admin</a></li>
+                    <li><a routerLink="ajouterFormation">Ajouter  Formation</a></li>
+                    
+                   
+                  </ul>
+                </li>
+                <li class="has-children" *ngIf="isLoggedIn() && user.role=='agent comptable'">
+                  <a href="" class="active">Tableau De Bord</a>
+                  <ul class="dropdown">
+                    <li><a routerLink="agentComptable">Agent Comptable</a></li>
+                    
+                   
+                  </ul>
+                </li>
+                
+                <li class="has-children">
+                  <a href="" *ngIf="!isLoggedIn()"  class="active">S’inscrire</a>
+                  <ul class="dropdown" >
+                    <li><a routerLink="inscription">Client</a></li>
+                    <li><a routerLink="inscriptionAgent">Agent Comptable</a></li>
+                    <li><a routerLink="inscriptionAdmin"> Admin</a></li>
+                    
+                   
+                  </ul>
+                </li>
+
+              <li *ngIf="isLoggedIn()"><a routerLink="profile" class="active">Bienvenu(e)  {{user.firstName}}  {{user.lastName}}</a></li>
+
+                
+              </ul>
+            </nav>
+            
+            <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+             
+             
+              <div class="ml-auto">
+                <a routerLink="recherche" style="margin-right: 20px;"  *ngIf="isLoggedIn() && user.role=='agent comptable'">Recherche</a>
+                <a routerLink="connecter" class="btn btn-primary border-width-2 d-none d-lg-inline-block"  *ngIf="!isLoggedIn()">Se Connecter</a>
+                <a  class="btn btn-primary border-width-2 d-none d-lg-inline-block" style="margin-left: 5px;"  (click)="logout()" *ngIf="isLoggedIn()">Se déconnecter</a>
+              </div>
+              <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+            </div>
+  
+          </div>
+        </div>
+      </header>

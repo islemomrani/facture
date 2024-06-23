@@ -1,0 +1,46 @@
+<table class="table table-hover" >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">prénom </th>
+
+        <th scope="col">Nom </th>
+
+        <th scope="col">Nom formation</th>
+        <th scope="col">Description</th>
+        <th scope="col">durée</th>
+        <th scope="col">Prix HT</th>
+        <th scope="col">TVA%</th>
+        <th scope="col">Prix TTC</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Date</th>
+        <th scope="col"> statut</th>
+        <th scope="col" style="padding-left: 3.7%;">Actions</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of factureTab">
+        
+        <td>{{m.userId.firstName}}</td>
+        <td>{{m.userId.lastName}}</td>        
+        <td> {{m.formationId.name}}</td>
+        
+        <td> {{m.formationId.description}}</td>
+        <td> {{m.formationId.duration}}</td>
+        <td> {{m.formationId.priceHt}}</td>
+        <td> {{m.formationId.tva}}</td>
+        <td> {{m.formationId.priceTtc | number: '4.3-3'}}</td>
+        <td> {{m.quantity}}</td>
+        <td> {{m.date | date:"yyyy/MM/dd"}}</td>
+        <td>  <span [ngStyle]="{color:statusStyle(m.status)}">{{m.status}}</span></td>
+        <td>
+            <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" style="margin-right: 10px;" (click)="updateStatus(m._id)">Statut</button>
+            <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" style="margin-right: 10px;" (click)="generatePdf(m._id)">pdf</button>
+
+            <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" (click)="deleteFacture(m._id)">Supprimer</button>
+        </td>
+      </tr>
+     
+   
+    </tbody>
+  </table>

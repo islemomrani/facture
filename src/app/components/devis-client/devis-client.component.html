@@ -1,0 +1,48 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('assets/images/hero_1.jpg');" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold " style="margin-left: 61%;">Mes Devis</h1>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">prénom </th>
+  
+        <th scope="col">Nom </th>
+  
+        <th scope="col">Nom formation</th>
+        <th scope="col">Description</th>
+        <th scope="col">durée</th>
+        <th scope="col">Prix HT</th>
+        <th scope="col">TVA</th>
+        <th scope="col">Prix TTC</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Date</th>
+  
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let devis of devisTab">
+  
+        <td>{{devis.userId.firstName}}</td>
+        <td>{{devis.userId.lastName}}</td>
+        <td>{{devis.formationId.name}}</td>
+        <td>{{devis.formationId.description}}</td>
+        <td>{{devis.formationId.duration}}</td>
+        <td>{{devis.formationId.priceHt}}</td>
+        <td>{{devis.formationId.tva}}</td>
+        <td>{{devis.formationId.priceTtc  | number: '4.3-3'}}</td>
+        <td>{{devis.quantity}}</td>
+        <td>{{devis.date | date:"yyyy/MM/dd"}}</td>
+       
+      </tr>
+  
+  
+    </tbody>
+  </table>

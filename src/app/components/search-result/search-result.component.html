@@ -1,0 +1,20 @@
+<div class="row" style="margin-left: 30%;">
+<div class="col-lg-6 mb-4 ">
+<div class="block__87154" style="display: flex;">
+        <blockquote>
+     <p>prénom :    <span>{{obj.userId.firstName}}</span></p>
+     <p>Nom :    <span>{{obj.userId.lastName}}</span></p>
+     <p>Nom formation :    <span>{{obj.formationId.name}}</span></p>
+     <p>Description :    <span>{{obj.formationId.description}}</span></p>
+     <p>durée :    <span>{{obj.formationId.duration}}</span></p>
+     <p>Prix HT :    <span>{{obj.formationId.priceHt}}</span></p>
+     <p>TVA :    <span>{{obj.formationId.tva}}</span></p>
+     <p>Prix TTC :    <span>{{obj.formationId.priceTtc | number: '4.3-3'}}</span></p>
+     <p>Quantité :    <span>{{obj.quantity}}</span></p>
+     <p>Date :    <span>{{obj.date | date:"yyyy/MM/dd"}}</span></p>
+     <p>statut :    <span>{{obj.status}}</span></p>
+    </blockquote>
+    
+  </div>
+</div>
+</div>

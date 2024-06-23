@@ -1,0 +1,29 @@
+<table class="table  table-hover" >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Description</th>
+        <th scope="col">Durée</th>
+        <th scope="col">Prix HT</th>
+        <th scope="col">TVA %</th>
+        <th scope="col" style="padding-left: 3.7%;">Actions</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of foramtionTab">
+        
+        <td>{{m.name}}</td>
+        <td>{{m.description}}</td>
+        <td>{{m.duration}}</td>
+        <td>{{m.priceHt}}</td>
+        <td>{{m.tva}}</td>
+        <td>
+            <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" style="margin-right: 10px;" (click)="editeFormation(m._id)">Modifier</button>
+            <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" (click)="deleteFormation(m._id)">Supprimer</button>
+        </td>
+      </tr>
+     
+    
+    </tbody>
+  </table>

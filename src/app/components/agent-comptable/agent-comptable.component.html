@@ -1,0 +1,38 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('assets/images/hero_1.jpg');" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold " style="margin-left: 45%;">Agent Comptable</h1>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<div>
+  <ul class="nav nav-tabs "  id="myTab" role="tablist" style="margin-left: 38%;">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Devis</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Factures</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab1" data-toggle="tab" href="#profile1" role="tab" aria-controls="profile1" aria-selected="false">Clients</a>
+    </li>
+    
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <app-devis-table></app-devis-table>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <app-facture-table></app-facture-table>
+    </div>
+    <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile-tab1">
+<app-client-table></app-client-table>
+</div>
+
+  </div>
+</div>

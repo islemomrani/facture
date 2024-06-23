@@ -1,0 +1,96 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('assets/images/hero_1.jpg');"
+  id="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1 class="text-white font-weight-bold text-center">{{title}}</h1>
+        <p style="margin-left: 25%; color: greenyellow; font-size: 19px;">C’est rapide et facile</p>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="site-section">
+  <div class="container ">
+    <div class="row">
+
+      <div class="col-lg-6" style="margin-left: 23%;">
+        <form [formGroup]="signupForm" class="p-4 border rounded img-shadow">
+          <div class="row form-group">
+            <div class="col-md-12 mb-3 mb-md-0">
+              <label class="text-black" for="">Prénom</label>
+              <input type="text" formControlName="firstName" id="fname1" class="form-control">
+            </div>
+            <div
+              *ngIf="(signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty))">
+              <div *ngIf="signupForm.controls['firstName'].errors?.['required']" class="red">Prénom * </div>
+              <div *ngIf="signupForm.controls['firstName'].errors?.['minlength']" class="red">Le prénom doit comporter
+                au moins 3 caractères *</div>
+
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12 mb-3 mb-md-0">
+              <label class="text-black" for="fname">Nom</label>
+              <input type="text" formControlName="lastName" id="fname2" class="form-control">
+            </div>
+            <div
+              *ngIf="(signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].touched ||signupForm.controls['lastName'].dirty) )">
+              <div *ngIf="signupForm.controls['lastName'].errors?.['required']" class="red">Nom * </div>
+              <div *ngIf="signupForm.controls['lastName'].errors?.['minlength']" class="red">Le prénom doit comporter au
+                moins 5 caractères *</div>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12 mb-3 mb-md-0">
+              <label class="text-black" for="fname">Téléphone</label>
+              <input type="text" formControlName="phone" id="fname3" class="form-control">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12 mb-3 mb-md-0">
+              <label class="text-black" for="fname">Adresse E-mail</label>
+              <input type="email" formControlName="email" id="fname4" class="form-control">
+            </div>
+            <div
+              *ngIf="signupForm.controls['email'].invalid &&(signupForm.controls['email'].touched||signupForm.controls['email'].dirty) ">
+              <div *ngIf="signupForm.controls['email'].errors?.['required']" class="red">E-mail * </div>
+              <div *ngIf="signupForm.controls['email'].errors?.['email']" class="red">vérifier l'e-mail *</div>
+            </div>
+          </div>
+          <div class="row form-group mb-4">
+            <div class="col-md-12 mb-3 mb-md-0">
+              <label class="text-black" for="fname">Mot de passe</label>
+              <input type="password" formControlName="password" id="fname5" class="form-control">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <button class="btn px-4 btn-primary text-white" (click)="filePiker.click()"> Télécharger une photo</button>
+            </div>
+          </div>
+          <img [src]="imagePreview" alt="" width="100px">
+
+          <div class="row form-group mb-4">
+            <div class="col-md-12 mb-3 mb-md-0"  style="visibility: hidden;">
+              <label class="text-black" for="fname">Photo </label>
+              <input type="file" id="fname" class="form-control" #filePiker (change)="onImageSelected($event)" />
+            </div>
+          </div>
+  
+          
+          <div class="row form-group">
+            <div class="col-md-12">
+              <input type="submit" value="S'inscrire" (click)="signup()" class="btn px-4 btn-primary text-white">
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

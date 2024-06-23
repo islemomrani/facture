@@ -1,0 +1,44 @@
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">prénom </th>
+
+      <th scope="col">Nom </th>
+
+      <th scope="col">Nom formation</th>
+      <th scope="col">Description</th>
+      <th scope="col">durée</th>
+      <th scope="col">Prix HT</th>
+      <th scope="col">TVA%</th>
+      <th scope="col">Prix TTC</th>
+      <th scope="col">Quantité</th>
+      <th scope="col">Date</th>
+
+      <th scope="col" style="padding-left: 3.7%;">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let devis of devisTab">
+
+      <td>{{devis.userId.firstName}}</td>
+      <td>{{devis.userId.lastName}}</td>
+      <td>{{devis.formationId.name}}</td>
+      <td>{{devis.formationId.description}}</td>
+      <td>{{devis.formationId.duration}}</td>
+      <td>{{devis.formationId.priceHt}}</td>
+      <td>{{devis.formationId.tva}}</td>
+      <td>{{devis.formationId.priceTtc  | number: '4.3-3'}}</td>
+      <td>{{devis.quantity}}</td>
+      <td>{{devis.date | date:"yyyy/MM/dd"}}</td>
+      <td>
+        <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" style="margin-right: 10px;" (click)="generatePdf(devis._id)">pdf</button>
+        
+        <button class="btn btn-primary border-width-2 d-none d-lg-inline-block"
+          (click)="deleteDevis(devis._id)">Supprimer</button>
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>

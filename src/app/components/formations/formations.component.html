@@ -1,0 +1,18 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('assets/images/hero_1.jpg');" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold " style="margin-left: 53%;">Nos Formations</h1>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="row">
+    <div class="col-4 col-md-4 col-lg-4 mb-4 mb-lg-4"      *ngFor="let m of foramtionTab">
+    
+
+  <app-formation-info [obj]="m"></app-formation-info>
+</div>
+</div>
+ 

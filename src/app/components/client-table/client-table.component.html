@@ -1,0 +1,26 @@
+<table class="table table-hover" >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Téléphone</th>
+        <th scope="col">E-mail</th>
+        <th scope="col" >Actions</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of userTab">
+        <td>{{x.lastName}}</td>
+        <td>{{x.firstName}}</td>
+        
+        <td>{{x.phone}}</td>
+        <td>{{x.email}}</td>
+        <td>
+            <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" (click)="deleteUser(x._id)">Supprimer</button>
+        </td>
+      </tr>
+     
+   
+    </tbody>
+  </table>

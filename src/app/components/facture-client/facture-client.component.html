@@ -1,0 +1,51 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('assets/images/hero_1.jpg');" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold " style="margin-left: 61%;">Mes Factures</h1>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <table class="table table-hover" >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">prénom </th>
+
+        <th scope="col">Nom </th>
+
+        <th scope="col">Nom formation</th>
+        <th scope="col">Description</th>
+        <th scope="col">durée</th>
+        <th scope="col">Prix HT</th>
+        <th scope="col">TVA</th>
+        <th scope="col">Prix TTC</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Date</th>
+        <th scope="col">statut</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of factureTab">
+        
+        <td>{{m.userId.firstName}}</td>
+        <td>{{m.userId.lastName}}</td>        
+        <td> {{m.formationId.name}}</td>
+        
+        <td> {{m.formationId.description}}</td>
+        <td> {{m.formationId.duration}}</td>
+        <td> {{m.formationId.priceHt}}</td>
+        <td> {{m.formationId.tva}}</td>
+        <td> {{m.formationId.priceTtc | number: '4.3-3'}}</td>
+        <td> {{m.quantity}}</td>
+        <td> {{m.date | date:"yyyy/MM/dd"}}</td>
+        <td>  {{m.status}}</td>
+        
+      </tr>
+     
+   
+    </tbody>
+  </table>

@@ -1,0 +1,56 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('assets/images/hero_1.jpg');" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold " style="margin-left: 61%;">Se Connecter</h1>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+  <section class="site-section">
+    <div class="container ">
+      <div class="row">
+        
+        <div class="col-lg-6" style="margin-left: 23%;">
+          <form action="#" [formGroup]="loginForm" class="p-4 border rounded img-shadow">
+
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Adresse e-mail</label>
+                <input type="email"  formControlName="email" id="fname" class="form-control" >
+              </div>
+              <div *ngIf="(loginForm.controls['email'].invalid && (loginForm.controls['email'].touched ||loginForm.controls['email'].dirty ))">
+ <div *ngIf="(loginForm.controls['email'].errors?.['email'])" class="red">vérifier l'e-mail *</div>
+<div *ngIf="(loginForm.controls['email'].errors?.['required'])" class="red">E-mail * </div>
+              </div>
+            </div>
+            <div class="row form-group mb-4">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Mot de passe</label>
+                <input type="password" formControlName="password"  id="fname" class="form-control" >
+              </div>
+              <div *ngIf="(loginForm.controls['password'].invalid && (loginForm.controls['password'].touched ||loginForm.controls['password'].dirty ))">
+                <div *ngIf="(loginForm.controls['password'].errors?.['minLength'])" class="red">vérifier mot de passe</div>
+               <div *ngIf="(loginForm.controls['password'].errors?.['required'])" class="red">mot de passe*</div>
+                             </div>
+            </div>
+            
+                         
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <input type="submit" value="Se Connecter" (click)="login()" class="btn px-4 btn-primary text-white">
+              </div>
+            </div>
+
+          </form>
+          <span style="color: red;">{{errorMsg}}</span>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,17 @@
+    <div class="container">
+<section>
+      <div class="card text-center img-shadow " style="margin-top: 40px;">
+        <img style="margin-left: 28%;" [src]="obj.picture" width="40%"   alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{obj.name}}</h5>
+          <p class="card-text">{{obj.description}}</p>
+          <p class="card-text">{{obj.duration}}</p>
+          <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" (click)="askForDevis(obj._id)">Demande devis</button>
+          <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" style="margin-left: 5px;" (click)="askForFacture(obj._id)">Demande facture</button>
+        </div>
+      </div>
+      
+              
+  
+    </section>      
+    </div>

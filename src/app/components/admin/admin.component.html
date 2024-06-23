@@ -1,0 +1,42 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('assets/images/hero_1.jpg');" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold " style="margin-left: 61%;">Admin</h1>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<div>
+  <ul class="nav nav-tabs t"  id="myTab" role="tablist" style="margin-left: 33%;">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Formations</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Clients</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Devis</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact1-tab" data-toggle="tab" href="#contact1" role="tab" aria-controls="contact1" aria-selected="false">Factures</a>
+      </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <app-formation-table></app-formation-table>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <app-client-table></app-client-table>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <app-devis-table></app-devis-table>
+    </div>
+    <div class="tab-pane fade" id="contact1" role="tabpanel" aria-labelledby="contact1-tab">
+      <app-facture-table></app-facture-table>
+    </div>
+  </div>
+</div>

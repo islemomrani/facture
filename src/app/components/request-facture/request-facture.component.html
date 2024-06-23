@@ -1,0 +1,91 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('assets/images/hero_1.jpg');" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold " style="margin-left: 47%;">Demande Facture</h1>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+  <section class="site-section">
+    <div class="container ">
+      <div class="row">
+        
+        <div class="col-lg-6" style="margin-left: 23%;">
+          <form  #requestForm="ngForm"  (ngSubmit)="requestFacture()" class="p-4 border rounded img-shadow">
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">prénom</label>
+                <input type="text" [(ngModel)]="decoded.firstName"  [ngModelOptions]="{standalone:true}" id="1" class="form-control" >
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Nom</label>
+                <input type="text" [(ngModel)]="decoded.lastName"  [ngModelOptions]="{standalone:true}" id="2" class="form-control" >
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Nom formation</label>
+                <input type="text"  [(ngModel)]="formation.name"   [ngModelOptions]="{standalone:true}" id="3" class="form-control" disabled >
+              </div>
+            </div>
+            <div class="row form-group mb-4">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Description</label>
+                <input type="text" [(ngModel)]="formation.description"  [ngModelOptions]="{standalone:true}" id="4" class="form-control" disabled >
+              </div>
+              
+            
+            </div> 
+            <div class="row form-group mb-4">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Durée</label>
+                <input type="text" [(ngModel)]="formation.duration"  [ngModelOptions]="{standalone:true}" id="5" class="form-control" disabled >
+              </div>
+            </div>
+            <div class="row form-group mb-4">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Prix HT</label>
+                <input type="number" [(ngModel)]="formation.priceHt"  [ngModelOptions]="{standalone:true}" id="6" class="form-control"  disabled>
+              </div>
+            </div>
+            <div class="row form-group mb-4">
+              <div class="col-md-12 mb-3 mb-md-0">
+              <label class="text-black" for="fname">TVA %</label>
+
+                <select class="form-select form-control"  [(ngModel)]="formation.tva"  [ngModelOptions]="{standalone:true}"  a disabled>
+                  <option selected >TVA %</option>
+                  <option value="10" >10</option>
+                  <option value="20" > 20</option>
+                  <option value="30" > 30</option>
+                  
+                </select>
+              </div>
+            </div>
+            <div class="row form-group mb-4">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Quantité</label>
+                <input type="number" [(ngModel)]="facture.quantity"  [ngModelOptions]="{standalone:true}"  id="7" class="form-control" >
+              </div>
+              
+            
+            </div>          
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <input type="submit" value="envoyer"  class="btn px-4 btn-primary text-white">
+              </div>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

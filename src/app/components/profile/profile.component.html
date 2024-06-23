@@ -1,0 +1,48 @@
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('assets/images/hero_1.jpg');" id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold " style="margin-left: 63%;"> Profile</h1>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section class="site-section" id="accordion">
+    <div class="container" >
+      
+      <div class="row accordion  block__76208" >
+        <div class="col-lg-6" >
+          <img [src]="decoded.picture" alt="Image" width="70%" class="img-fluid rounded " style="margin-top: 90px;margin-left: 150px;">
+        </div>
+        <div class="col-lg-5 ml-auto">
+          <div class="accordion-item">
+            
+            <div id="collapseFive" class="collapse show block__62849 img-shadow" aria-labelledby="headingOne" data-parent="#accordion" style="margin-top: 100px; padding: 30px;">
+              <div class="body-text">
+                <div ><p class="h3 " style="color: black;"><span style="margin-right: 20%">Prénom :</span>   {{decoded.firstName}}</p>    </div><br>
+                <div > <p class="h3 " style="color: black;"><span style="margin-right: 28%;">Nom :</span>    {{decoded.lastName}}</p> </div><br>
+                
+<div style="margin-top: 50px;">
+    <button  class="btn px-4 btn-primary text-white btn-lg" (click)="Profile()">Modifier</button>
+
+</div>                
+              </div>
+            </div>
+          </div> <!-- .accordion-item -->
+
+         
+
+         
+
+        
+
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
